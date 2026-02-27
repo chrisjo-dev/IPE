@@ -29,8 +29,8 @@ export default function Exam({ config, onFinish, onCancel }) {
   const currentAnswered = answers[q.id] != null
 
   function selectAnswer(choiceIndex) {
-    // 이미 답변한 경우 변경 불가
-    if (answers[q.id] != null) return
+    // 연습모드에서 이미 답변한 경우 변경 불가
+    if (practiceMode && answers[q.id] != null) return
     setAnswers((prev) => ({ ...prev, [q.id]: choiceIndex }))
   }
 
