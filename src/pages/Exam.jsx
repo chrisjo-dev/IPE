@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import questions, { SUBJECTS } from '../data/questions'
 import { saveResult } from '../utils/storage'
+import QuestionText from '../components/QuestionText'
 
 export default function Exam({ config, onFinish, onCancel }) {
   const practiceMode = config.practiceMode
@@ -176,7 +177,7 @@ export default function Exam({ config, onFinish, onCancel }) {
           </span>
         </div>
         <p className="text-slate-800 font-medium text-base leading-relaxed mb-6">
-          {current + 1}. {q.question}
+          {current + 1}. <QuestionText text={q.question} />
         </p>
 
         {/* 선택지 */}

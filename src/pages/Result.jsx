@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import QuestionText from '../components/QuestionText'
 
 export default function Result({ result, onHome, onRetry }) {
   const [openWrongSubject, setOpenWrongSubject] = useState(null)
@@ -103,7 +104,7 @@ export default function Result({ result, onHome, onRetry }) {
                         {s.wrong.map(({ question: q, selected }) => (
                           <div key={q.id} className="px-4 py-4 border-b border-slate-50 last:border-0">
                             <p className="text-sm text-slate-700 font-medium mb-3 leading-relaxed">
-                              {q.id}. {q.question}
+                              {q.id}. <QuestionText text={q.question} />
                             </p>
                             <div className="space-y-1.5 mb-3">
                               {q.choices.map((choice, idx) => {
