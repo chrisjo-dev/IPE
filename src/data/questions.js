@@ -184,12 +184,11 @@ const questions = [
     question: '다음 중 현행 시스템 파악 절차에 해당하지 않는 것은?',
     choices: [
       '시스템 구성 파악',
-      '기능 파악',
       '인터페이스 현황 파악',
       '네트워크 구성 파악',
       '사용자 요구사항 명세 작성',
     ],
-    answer: 5,
+    answer: 4,
     explanation: '현행 시스템 파악 단계는 현재 운영 중인 시스템 분석 단계이다. 요구사항 명세 작성은 차세대 시스템 설계 단계에 해당한다.',
   },
   {
@@ -199,12 +198,11 @@ const questions = [
     question: '소프트웨어가 사용자의 요구사항을 올바르게 충족하는지를 확인하는 개념은?',
     choices: [
       '신뢰성',
-      '효율성',
       '완전성',
       '유효성(Validity)',
       '무결성',
     ],
-    answer: 4,
+    answer: 3,
     explanation: 'Verification: 제품을 올바르게 만들었는가 / Validation: 올바른 제품을 만들었는가. 사용자 요구를 충족하는지 확인하는 것은 Validation(유효성)이다.',
   },
   {
@@ -215,11 +213,10 @@ const questions = [
     choices: [
       '시퀀스 다이어그램',
       '활동 다이어그램',
-      '상태 다이어그램',
       '클래스 다이어그램',
       '커뮤니케이션 다이어그램',
     ],
-    answer: 4,
+    answer: 3,
     explanation: '동적 다이어그램: 시퀀스, 활동, 상태, 커뮤니케이션. 정적(구조) 다이어그램: 클래스, 객체, 컴포넌트, 배치 등. 클래스 다이어그램은 구조 다이어그램이다.',
   },
   {
@@ -232,7 +229,6 @@ const questions = [
       '객체 간 결합도 증가',
       '내부 구현 세부사항 보호',
       '실행 속도 향상',
-      '클래스 수 감소',
     ],
     answer: 3,
     explanation: '캡슐화의 핵심은 정보 은닉(Information Hiding)이다. 외부에서 객체 내부 데이터를 직접 접근하지 못하게 하여 결합도를 낮추고 유지보수를 용이하게 한다.',
@@ -247,7 +243,6 @@ const questions = [
       'Strategy',
       'Command',
       'Proxy',
-      'State',
     ],
     answer: 4,
     explanation: '생성 패턴: Singleton, Factory, Builder 등. 구조 패턴: Proxy, Adapter, Bridge 등. 행위 패턴: Observer, Strategy, Command, State 등. Proxy는 구조 패턴이다.',
