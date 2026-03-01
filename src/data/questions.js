@@ -1,4 +1,4 @@
-import questions2026_1, { SUBJECTS as SUBJECTS_2026_1 } from './questions-2026-1'
+import questions2026_1, { SUBJECTS as SUBJECTS_2026_1 } from './questions-2026-1a'
 import questions2026_1b, { SUBJECTS as SUBJECTS_2026_1b } from './questions-2026-1b'
 import questions2024_3, { SUBJECTS as SUBJECTS_2024_3 } from './questions-2024-3'
 
