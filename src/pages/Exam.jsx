@@ -14,7 +14,7 @@ export default function Exam({ config, onFinish, onCancel }) {
 
   const [current, setCurrent] = useState(0)
   const [answers, setAnswers] = useState({}) // { questionId: choiceIndex(1~4) }
-  const [showExplanation, setShowExplanation] = useState({}) // { questionId: bool }
+  const [showExplanation, setShowExplanation] = useState({}) // { questionId: bool }, undefined = 열림
   const [showConfirm, setShowConfirm] = useState(false)
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false)
 
@@ -37,7 +37,7 @@ export default function Exam({ config, onFinish, onCancel }) {
   }
 
   function toggleExplanation(qId) {
-    setShowExplanation((prev) => ({ ...prev, [qId]: !prev[qId] }))
+    setShowExplanation((prev) => ({ ...prev, [qId]: prev[qId] !== false ? false : true }))
   }
 
   function submit() {
@@ -208,9 +208,9 @@ export default function Exam({ config, onFinish, onCancel }) {
               onClick={() => toggleExplanation(q.id)}
               className="text-sm text-blue-600 font-medium"
             >
-              {showExplanation[q.id] ? '해설 닫기 ▲' : '해설 보기 ▼'}
+              {showExplanation[q.id] !== false ? '해설 닫기 ▲' : '해설 보기 ▼'}
             </button>
-            {showExplanation[q.id] && (
+            {showExplanation[q.id] !== false && (
               <div className="mt-2 bg-blue-50 rounded-xl px-4 py-3 text-sm text-blue-800 leading-relaxed">
                 {q.explanation}
               </div>

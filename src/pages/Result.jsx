@@ -10,7 +10,7 @@ export default function Result({ result, onHome, onRetry }) {
   const { subjectResults, avgScore, passed } = result
 
   function toggleExplanation(qId) {
-    setShowExplanation((prev) => ({ ...prev, [qId]: !prev[qId] }))
+    setShowExplanation((prev) => ({ ...prev, [qId]: prev[qId] !== false ? false : true }))
   }
 
   return (
@@ -129,9 +129,9 @@ export default function Result({ result, onHome, onRetry }) {
                               onClick={() => toggleExplanation(q.id)}
                               className="text-xs text-blue-600 font-medium"
                             >
-                              {showExplanation[q.id] ? '해설 닫기 ▲' : '해설 보기 ▼'}
+                              {showExplanation[q.id] !== false ? '해설 닫기 ▲' : '해설 보기 ▼'}
                             </button>
-                            {showExplanation[q.id] && (
+                            {showExplanation[q.id] !== false && (
                               <div className="mt-2 bg-blue-50 rounded-lg px-3 py-2 text-sm text-blue-800 leading-relaxed">
                                 {q.explanation}
                               </div>
