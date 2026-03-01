@@ -1,15 +1,16 @@
 import { useState, useMemo, useEffect } from 'react'
-import questions, { SUBJECTS } from '../data/questions'
+import { getExamData } from '../data/questions'
 import { saveResult } from '../utils/storage'
 import QuestionText from '../components/QuestionText'
 
 export default function Exam({ config, onFinish, onCancel }) {
   const practiceMode = config.practiceMode
+  const { questions, subjects } = getExamData(config.examId)
 
   const examQuestions = useMemo(() => {
     if (config.mode === 'full') return questions
     return questions.filter((q) => q.subject === config.subjectId)
-  }, [config.mode, config.subjectId])
+  }, [config.mode, config.subjectId, questions])
 
   const [current, setCurrent] = useState(0)
   const [answers, setAnswers] = useState({}) // { questionId: choiceIndex(1~4) }
@@ -41,7 +42,7 @@ export default function Exam({ config, onFinish, onCancel }) {
 
   function submit() {
     const subjectScores = {}
-    SUBJECTS.forEach((s) => {
+    subjects.forEach((s) => {
       subjectScores[s.id] = { name: s.name, correct: 0, total: 0, wrong: [] }
     })
 
