@@ -869,7 +869,7 @@ const questions = [
     id: 62,
     subject: 4,
     subjectName: '프로그래밍 언어 활용',
-    question: '다음 c언어 프로그램이 실행되었을 때, 실행 결과는?\n#include <stdio.h>\nint main(int argc, char *argv[ ]) {\n    int a = 1, b= 2\n    int r = (++a, a++, b++);\n    printf("%d", r);\n    return 0;\n}',
+    question: '다음 c언어 프로그램이 실행되었을 때, 실행 결과는?\n```c\n#include <stdio.h>\nint main(int argc, char *argv[ ]) {\n    int a = 1, b= 2\n    int r = (++a, a++, b++);\n    printf("%d", r);\n    return 0;\n}\n```',
     choices: [
       '1',
       '2',
@@ -1037,7 +1037,7 @@ const questions = [
     id: 74,
     subject: 4,
     subjectName: '프로그래밍 언어 활용',
-    question: '자바 프로그램이 실행되었을 때, 실행 결과는?\npublic class Main{\n    public static void main(String[] args){\n        int[] c = {500, 100, 50, 10};\n        int m = 6790;\n        int a = 0;\n        for (int i = 0; i < c.length; i++){\n            int cnt = m/c[i]\n            a += cnt;\n            m = m - cnt*c[i];\n        }\n        System.out.printf("%d", a);\n    }\n}',
+    question: '자바 프로그램이 실행되었을 때, 실행 결과는?\n```java\npublic class Main{\n    public static void main(String[] args){\n        int[] c = {500, 100, 50, 10};\n        int m = 6790;\n        int a = 0;\n        for (int i = 0; i < c.length; i++){\n            int cnt = m/c[i]\n            a += cnt;\n            m = m - cnt*c[i];\n        }\n        System.out.printf("%d", a);\n    }\n}\n```',
     choices: [
       '4',
       '20',
@@ -1107,7 +1107,7 @@ const questions = [
     id: 79,
     subject: 4,
     subjectName: '프로그래밍 언어 활용',
-    question: '다음 C언어 프로그램이 실행되었을 때의 결과는?\n#include <stdio.h>\nint main(int argc, char *argv[]){\n    int a = 4;\n    int b = 7;\n    int c = a | b;\n    printf("%d", c);\n    return 0;\n}',
+    question: '다음 C언어 프로그램이 실행되었을 때의 결과는?\n```c\n#include <stdio.h>\nint main(int argc, char *argv[]){\n    int a = 4;\n    int b = 7;\n    int c = a | b;\n    printf("%d", c);\n    return 0;\n}\n```',
     choices: [
       '3',
       '4',
@@ -1121,7 +1121,7 @@ const questions = [
     id: 80,
     subject: 4,
     subjectName: '프로그래밍 언어 활용',
-    question: '다음 Python 프로그램의 실행 결과가 [실행 결과]와 같을 때, 빈칸에 적합한 것은?\nx = 20\nif x == 10:\n    print(\'10\')\n( ) x == 20:\n    print(\'20\')\nelse:\n    print(\'other\')\n[실행 결과] 20',
+    question: '다음 Python 프로그램의 실행 결과가 [실행 결과]와 같을 때, 빈칸에 적합한 것은?\n```python\nx = 20\nif x == 10:\n    print(\'10\')\n( ) x == 20:\n    print(\'20\')\nelse:\n    print(\'other\')\n```\n[실행 결과] 20',
     choices: [
       'either',
       'elif',
