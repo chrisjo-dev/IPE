@@ -154,14 +154,16 @@ export default function Result({ result, onHome, onRetry }) {
           onClick={onHome}
           className="flex-1 py-3 rounded-xl border border-slate-200 text-slate-600 font-medium"
         >
-          홈으로
+          {onRetry ? '홈으로' : '← 기록으로'}
         </button>
-        <button
-          onClick={onRetry}
-          className="flex-1 py-3 rounded-xl bg-blue-600 text-white font-medium active:bg-blue-700"
-        >
-          다시 풀기
-        </button>
+        {onRetry && (
+          <button
+            onClick={onRetry}
+            className="flex-1 py-3 rounded-xl bg-blue-600 text-white font-medium active:bg-blue-700"
+          >
+            다시 풀기
+          </button>
+        )}
       </div>
     </div>
   )

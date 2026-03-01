@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { getHistory, clearHistory } from '../utils/storage'
 import { SUBJECTS } from '../data/questions'
+import Result from './Result'
 
 export default function History({ onBack }) {
   const [history, setHistory] = useState([])
   const [showClearConfirm, setShowClearConfirm] = useState(false)
+  const [selectedRecord, setSelectedRecord] = useState(null)
 
   useEffect(() => {
     setHistory(getHistory())
@@ -27,6 +29,19 @@ export default function History({ onBack }) {
     if (record.mode === 'full') return '전체 모의고사'
     const subject = SUBJECTS.find((s) => s.id === record.subjectId)
     return subject ? subject.name : '과목별'
+  }
+
+  if (selectedRecord) {
+    return (
+      <div className="max-w-lg mx-auto">
+        <div className="px-4 pt-4">
+          <button onClick={() => setSelectedRecord(null)} className="text-slate-500 text-sm">
+            ← 기록으로
+          </button>
+        </div>
+        <Result result={selectedRecord} onHome={() => setSelectedRecord(null)} onRetry={null} />
+      </div>
+    )
   }
 
   return (
@@ -56,7 +71,8 @@ export default function History({ onBack }) {
           {history.map((record) => (
             <div
               key={record.id}
-              className="bg-white rounded-2xl border border-slate-200 p-4"
+              onClick={() => setSelectedRecord(record)}
+              className="bg-white rounded-2xl border border-slate-200 p-4 cursor-pointer active:bg-slate-50"
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium text-slate-700">{getModeName(record)}</span>
