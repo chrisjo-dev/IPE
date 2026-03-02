@@ -453,7 +453,7 @@ const questions = [
     id: 40,
     subject: 2,
     subjectName: '소프트웨어 개발',
-    question: '다음 트리를 전위 순회(Preorder Traversal)한 결과는?\n```\n          +\n         / \\\n        *   E\n       / \\\n      *   D\n     / \\\n    /   C\n   / \\\n  A   B\n```',
+    question: '다음 트리를 전위 순회(Preorder Traversal)한 결과는?\n```\n           +\n          / \\\n         *   E\n        / \\\n       *   D\n      / \\\n    (/)   C\n    / \\\n   A   B\n```',
     choices: [
       '+*AB/*CDE',
       'AB/C*D*E+',
