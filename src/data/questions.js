@@ -1,4 +1,5 @@
 import questions2026_1a, { SUBJECTS as SUBJECTS_2026_1a } from './questions-2026-1a'
+import questions2026_1c, { SUBJECTS as SUBJECTS_2026_1c } from './questions-2026-1c'
 import questions2026_1b, { SUBJECTS as SUBJECTS_2026_1b } from './questions-2026-1b'
 import questions2024_3, { SUBJECTS as SUBJECTS_2024_3 } from './questions-2024-3'
 import questions2024_2, { SUBJECTS as SUBJECTS_2024_2 } from './questions-2024-2'
@@ -11,6 +12,10 @@ const EXAM_DATA = {
   '2026-1': {
     questions: questions2026_1a,
     subjects: SUBJECTS_2026_1a,
+  },
+  '2026-1c': {
+    questions: questions2026_1c,
+    subjects: SUBJECTS_2026_1c,
   },
   '2026-1b': {
     questions: questions2026_1b,
