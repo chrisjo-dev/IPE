@@ -750,7 +750,7 @@ const questions = [
     id: 63,
     subject: 4,
     subjectName: '프로그래밍 언어 활용',
-    question: '다음 C 프로그램의 결과 값은?\n```c\nmain(void) {\n  int i;\n  int sum = 0;\n  for(i=1; i<=(10-i=1+i=2); i++)\n    sum = sum + i;\n  printf("%d", sum);\n}\n```',
+    question: '다음 C 프로그램의 결과 값은?\n```c\nmain(void) {\n  int i;\n  int sum = 0;\n  for(i=1; i<=10; i+=2)\n    sum = sum + i;\n  printf("%d", sum);\n}\n```',
     choices: [
       '15',
       '19',
